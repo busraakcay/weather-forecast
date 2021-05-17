@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather_graph"
+    app:startDestination="@id/placesFragment">
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="com.busra.weatherforecast.view.PlacesFragment"
+        android:label="fragment_places"
+        tools:layout="@layout/fragment_places" >
+        <action
+            android:id="@+id/action_placesFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citiesFragment"
+        android:name="com.busra.weatherforecast.view.CitiesFragment"
+        android:label="fragment_cities"
+        tools:layout="@layout/fragment_cities" >
+        <action
+            android:id="@+id/action_citiesFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+        <argument
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="lng"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.busra.weatherforecast.view.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" >
+        <argument
+            android:name="cityId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

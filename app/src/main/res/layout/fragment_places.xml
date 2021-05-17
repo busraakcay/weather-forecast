@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/placesSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.PlacesFragment">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/placesRecycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/placesError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="285dp"
+                android:layout_marginBottom="242dp"
+                android:text="Try Again"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/goNearbyCities"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+            <ProgressBar
+                android:id="@+id/placesLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ProgressBar>
+
+            <Button
+                android:id="@+id/goNearbyCities"
+                android:layout_width="418dp"
+                android:layout_height="54dp"
+                android:text="Nearby Cıtıes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/placesRecycler"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
